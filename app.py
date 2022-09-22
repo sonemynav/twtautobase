@@ -16,6 +16,7 @@ logging.basicConfig(level=logging.WARNING,
 
 User = Autobase(config)
 ## User2 = Autobase(config2)
+## User2 = Autobase(config2)
 
 # SETTING NGROK AND WEBHOOK SERVER
 url = webMan.connect_ngrok(config.NGROK_AUTH_TOKEN)
