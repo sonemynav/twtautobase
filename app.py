@@ -5,7 +5,8 @@ from twitter_autobase import Autobase
 from twitter_autobase import webhook_manager as webMan
 import config
 import logging
-logging.basicConfig(level=logging.WARNING, format="%(name)s - %(levelname)s - %(message)s")
+logging.basicConfig(level=logging.WARNING,
+                    format="%(name)s - %(levelname)s - %(message)s")
 
 # if you want to run multiple account, create a copy of config.py. example: config2.py , etc.
 # then follow these ## template...
@@ -21,11 +22,11 @@ url = webMan.connect_ngrok(config.NGROK_AUTH_TOKEN)
 server = webMan.server_config(
     url=url+"/listener",
     dict_credential={
-        User.bot_username : config.CONSUMER_SECRET,
+        User.bot_username: config.CONSUMER_SECRET,
         ## User2.bot_username : config2.CONSUMER_SECRET
     },
     dict_func={
-        User.bot_id : User.webhook_connector,
+        User.bot_id: User.webhook_connector,
         ## User2.bot_id : User2.webhook_connector
     },
     subscribe=[
