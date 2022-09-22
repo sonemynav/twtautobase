@@ -111,7 +111,7 @@ Watermark = True
 Watermark_data = {
     # bool (True: default image, False: no image) or image file path (str)
     'image': 'twitter_autobase/watermark/wmkm.png',
-    'text': 'Kudus Menfess',  # if you won't to add text, fill it with empty string ''
+    'text': '',  # if you won't to add text, fill it with empty string ''
     'font': 'twitter_autobase/watermark/FreeMono.ttf',  # font file path
     'textColor': (100, 0, 0, 1),  # RGBA
     'textStroke': (0, 225, 225, 1),  # RGBA
