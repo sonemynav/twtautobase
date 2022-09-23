@@ -136,7 +136,7 @@ Off_scheduleData = {
 Off_scheduleMsg = f"Automenfess dimatikan setiap pukul {Off_scheduleData['start'][0]}:{Off_scheduleData['start'][1]} \
 sampai dengan pukul {Off_scheduleData['end'][0]}:{Off_scheduleData['end'][1]}"
 
-Trigger_word = ["#menfessem"]
+Trigger_word = ["menfessem!"]
 Notify_wrongTrigger = {
     'user': True,  # send notif to user
     'admin': False,  # send wrong trigger menfess to admin
