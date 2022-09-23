@@ -1,1 +1,1 @@
-worker: python.exe app.py
+worker: python3 app.py
