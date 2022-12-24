@@ -1,20 +1,20 @@
-NGROK_AUTH_TOKEN = ""
+NGROK_AUTH_TOKEN = "2IgAeEoMls5qtV3jTfiZKFAIQSv_3VR5AriWbrjpbSWozwPBa"
 # 2AHwJ4q5MToVwNVW7r5sNXutT7p_32csCB9LLWBdf7x1czLrh
 # copy the auth token from https://dashboard.ngrok.com/get-started/your-authtoken
 # you don't need to fill ngrok auth token for debugging on local
 
-CONSUMER_KEY = "DrjaxMh8Tfa5V963fLQxfAm64"
-CONSUMER_SECRET = "TmNMhSz9Uun28Iy3dy4OczhZs5MLIBwkOWLStQy91OOMS8XJm0"
-ACCESS_KEY = "1240051134993055745-He0NvXRaXJMnrYYJLmMBA7SrCHwK5h"
-ACCESS_SECRET = "kIWxzUq8YTQQNbuuAzTkhkebxc3frLWTXqthR1nOebKiQ"
-ENV_NAME = "menfessem"
+CONSUMER_KEY = "FwoyM5nSw9f3qYf275XGtbpU0"
+CONSUMER_SECRET = "5MTua2UU3yeYvEhFgaKun7GXVazO5VWroq6RSyUO6V4DT9xR22"
+ACCESS_KEY = "1353541609011384321-iD1b7OQ2hmZPgv9MYc5WvKeEcD8CpI"
+ACCESS_SECRET = "mLBOpvi5WkfRd1KdN3eqGYShkyQ1TxtNIlP9lNLCPqKDE"
+ENV_NAME = "cardyarea"
 
 
 # create Account Activity API (AAPI) dev env on https://developer.twitter.com/en/account/environments
 # ENV_NAME is the same as Dev environment label
 # Check your AAPI subcription renewal date on https://developer.twitter.com/en/account/subscriptions
 
-Admin_id = ["434850590"]  # list of str
+Admin_id = ["163389021"]  # list of str
 # Admin id is like sender id. To check it, send a menfess from your admin account.
 # IF YOU WANT TO TEST THE CONFIG, REMEMBER THIS! USERS IN ADMIN_ID PASS ALL USER'S FILTERS, you should delete your id on Admin_id
 
@@ -23,16 +23,16 @@ Timezone = 7
 Notify_queue = True
 # bool, True: Send the menfess queue to sender
 # The first tweet in queue won't be notified to sender (the delay is very quick).
-Notify_queueMessage = "Menfessem urutan ke-{}, akan terkirim sekitar pukul {}.\nKirim '/cancel' untuk " \
-                      "membatalkan menfessem sebelum terkirim"
+Notify_queueMessage = "Menfess urutan ke-{}, akan terkirim sekitar pukul {}.\nKirim '/cancel' untuk " \
+                      "membatalkan menfess sebelum terkirim"
 # Please keep the "{}" format -> .format(queue, time)
 
 Notify_sent = True
 # bool, True: Send menfess tweet link to sender when menfess sent
-Notify_sentMessage = "Yeay! Menfessem telah terkirim! \nhttps://twitter.com/{}/status/"
+Notify_sentMessage = "Yeay! Menfess telah terkirim! \nhttps://twitter.com/{}/status/"
 # Please keep the "{}" format -> .format(bot_username) + postid
 
-Notify_sentFail1 = "Maaf ada kesalahan pada sistem menfessem :( \ntolong screenshot & laporkan kepada admin"
+Notify_sentFail1 = "Maaf ada kesalahan pada sistem menfess :( \ntolong tunggu beberapa saat"
 # Used when error is happened in system
 
 Interval_perSender = False  # bool
@@ -48,7 +48,7 @@ Delay_time = 24  # int, seconds
 
 # Welcome message to new followers
 Greet_newFollower = True
-Notif_newFollower = "Makasih yaa udah follow menfessem :)"
+Notif_newFollower = "Makasih yaa udah follow cardyarea, jangan lupa baca rules sebelum mengirim menfess :)"
 
 Keyword_deleter = False  # Trigger word deleter
 # bool, True: Delete keyword from menfess before uploaded
@@ -69,16 +69,16 @@ Notif_twitterUrl = "Kamu hanya bisa mengirim url yang berasal dari twitter :("
 
 Verify_beforeSent = True
 Verify_beforeSentData = {
-    'text': 'Baca dulu peraturan base . Kamu yakin mau mengirim menfessem?',
+    'text': 'Baca dulu peraturan base. Apakah kamu yakin mau mengirim menfess ini?',
     'options': [
         {
-            'label': 'ya',
+            'label': 'yes',
             # max 72 chars (include space)
             'description': 'melanjutkan untuk mengirim menfess',
             'metadata': 'exec|self._verif_menfess("accept", sender_id)'
         },
         {
-            'label': 'tidak',
+            'label': 'no',
             # max 72 chars (include space)
             'description': 'membatalkan untuk mengirim menfess',
             'metadata': 'exec|self._verif_menfess("reject", sender_id)'
@@ -136,7 +136,7 @@ Off_scheduleData = {
 Off_scheduleMsg = f"Automenfess dimatikan setiap pukul {Off_scheduleData['start'][0]}:{Off_scheduleData['start'][1]} \
 sampai dengan pukul {Off_scheduleData['end'][0]}:{Off_scheduleData['end'][1]}"
 
-Trigger_word = ["menfessem!"]
+Trigger_word = ["cardy!", "svtgf!"]
 Notify_wrongTrigger = {
     'user': True,  # send notif to user
     'admin': False,  # send wrong trigger menfess to admin
@@ -186,14 +186,14 @@ User_cmd = {
 # /delete and /unsend is not available for user when bot was just started and user id not in db_sent
 # /delete & db_sent are only available for one day (reset every midnight or heroku dyno cycling)
 Notif_DMCmdDelete = {
-    'succeed': 'Yeay! Menfessem sudah berhasil dihapus',
-    'failed': 'Duh! Menfessem ini ngga bisa dihapus :('
+    'succeed': 'Yeay! Menfess sudah berhasil dihapus',
+    'failed': 'Duh! Menfess ini ngga bisa dihapus :('
 }
 # Notif_DMCmdDelete is only for user, '/unsend' using this notif too
 Notif_DMCmdCancel = {
-    'succeed': 'Yeay! Menfessem kamu berhasil dicancel',
-    'failed': 'Duh! Menfessem ngga bisa dicancel',
-    'on_process': 'Duh! Menfessem lagi diproses, kirim "/unsend" setelah menfessem terkirim',
+    'succeed': 'Yeay! Menfess kamu berhasil dicancel',
+    'failed': 'Duh! Menfess ngga bisa dicancel',
+    'on_process': 'Duh! Menfess lagi diproses, kirim "/unsend" setelah menfessem terkirim',
 }
 
 # Max 20 options, Max 72 chars description, Please keep the metadata, Read metadata doc at README.md
