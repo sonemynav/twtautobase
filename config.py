@@ -23,7 +23,7 @@ Timezone = 7
 Notify_queue = True
 # bool, True: Send the menfess queue to sender
 # The first tweet in queue won't be notified to sender (the delay is very quick).
-Notify_queueMessage = "Menfess urutan ke-{}, akan terkirim sekitar pukul {}.\nKirim '/cancel' untuk " \
+Notify_queueMessage = "Menfess kamu berada di urutan ke-{}, akan terkirim sekitar pukul {}.\nKirim '/cancel' untuk " \
                       "membatalkan menfess sebelum terkirim"
 # Please keep the "{}" format -> .format(queue, time)
 
